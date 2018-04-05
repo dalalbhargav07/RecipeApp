@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "97085563030",
+    "firebase_url": "https://recipeapp-cc4cf.firebaseio.com",
+    "project_id": "recipeapp-cc4cf",
+    "storage_bucket": "recipeapp-cc4cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97085563030:android:6b1627ccfc526d09",
+        "android_client_info": {
+          "package_name": "com.example.dalalbhargav07.recipeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97085563030-iri9d8robbufbbs2e45d2d50r604h979.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0BJdgUYv94zN5NhcwOjU6banyDpgAd2M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
