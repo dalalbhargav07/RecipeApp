@@ -63,13 +63,7 @@ public class createRecipe {
         this.rate = rate;
     }
 
-    public String getrecipe_name() {
-        return recipe_name;
-    }
 
-    public void setrecipe_name(String recipe_name) {
-        this.recipe_name = recipe_name;
-    }
 
     public String getRecipeID() {
         return recipeID;
@@ -77,5 +71,13 @@ public class createRecipe {
 
     public void setRecipeID(String recipeID) {
         this.recipeID = recipeID;
+    }
+
+    public String getRecipe_name() {
+        return recipe_name;
+    }
+
+    public void setRecipe_name(String recipe_name) {
+        this.recipe_name = recipe_name;
     }
 }
