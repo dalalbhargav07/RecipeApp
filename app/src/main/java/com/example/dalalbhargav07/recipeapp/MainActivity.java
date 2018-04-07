@@ -1,5 +1,6 @@
 package com.example.dalalbhargav07.recipeapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText description;
     EditText ingredients;
     EditText instructions;
+    EditText url;
 
     EditText rating;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         save = findViewById(R.id.savebtn);
 
         rating = findViewById(R.id.et_rating);
+        url = findViewById(R.id.et_url);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         String ingr = ingredients.getText().toString();
         String instr = instructions.getText().toString();
         String rate = rating.getText().toString();
+        String URL = url.getText().toString();
 
         if (!TextUtils.isEmpty(name_tv)) {
 
@@ -74,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
 
             //displaying a success toast
             Toast.makeText(this, "Recipe added", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, showRecipe_recyclerview.class);
+            startActivity(intent);
         } else {
             //if the value is not given displaying a toast
             Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();

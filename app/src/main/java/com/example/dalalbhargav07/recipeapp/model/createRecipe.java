@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by dalalbhargav07 on 05-04-2018.
  */
 
-public class createRecipe {
+public class createRecipe implements Serializable{
     private String recipeID;
 
     private String recipe_name;
@@ -18,6 +18,8 @@ public class createRecipe {
     private String instructions;
 
     private String rate;
+
+    private String URL;
 
 
     public createRecipe() {}
@@ -79,5 +81,13 @@ public class createRecipe {
 
     public void setRecipe_name(String recipe_name) {
         this.recipe_name = recipe_name;
+    }
+
+    public String getURL() {
+        return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 }
