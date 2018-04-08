@@ -19,12 +19,12 @@ public class createRecipe implements Serializable{
 
     private String rate;
 
-    private String URL;
+    private String url;
 
 
     public createRecipe() {}
 
-    public createRecipe(String recipeID, String recipe_name, String description, String ingredients, String instructions, String rate) {
+    public createRecipe(String recipeID, String recipe_name, String description, String ingredients, String instructions, String rate, String url) {
 
         this.recipeID = recipeID;
         this.recipe_name = recipe_name;
@@ -32,6 +32,7 @@ public class createRecipe implements Serializable{
         this.ingredients = ingredients;
         this.instructions = instructions;
         this.rate = rate;
+        this.url = url;
     }
     public String getDescription() {
         return description;
@@ -83,11 +84,11 @@ public class createRecipe implements Serializable{
         this.recipe_name = recipe_name;
     }
 
-    public String getURL() {
-        return URL;
+    public String geturl() {
+        return url;
     }
 
-    public void setURL(String URL) {
-        this.URL = URL;
+    public void seturl(String url) {
+        this.url = url;
     }
 }

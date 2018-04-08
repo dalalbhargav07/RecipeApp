@@ -1,7 +1,10 @@
 package com.example.dalalbhargav07.recipeapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -9,6 +12,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by dalalbhargav07 on 07-04-2018.
@@ -21,7 +27,8 @@ public class showRecipeDetail extends AppCompatActivity {
     private TextView ingr;
     private TextView instr;
     private TextView rate;
-    private TextView URL;
+    private TextView urL;
+    private Button editbtn;
 
     private  String recipe_key = null;
 
@@ -41,7 +48,8 @@ public class showRecipeDetail extends AppCompatActivity {
         ingr = findViewById(R.id.tv_ingredients);
         instr = findViewById(R.id.tv_instruction);
         rate = findViewById(R.id.tv_rating);
-        URL = findViewById(R.id.tv_url);
+        urL = findViewById(R.id.tv_url);
+        editbtn = findViewById(R.id.editbtn);
 
         recipedb.child(recipe_key).addValueEventListener(new ValueEventListener() {
             @Override
@@ -52,20 +60,37 @@ public class showRecipeDetail extends AppCompatActivity {
                 String ingredients = (String) dataSnapshot.child("ingredients").getValue();
                 String instructions = (String) dataSnapshot.child("instructions").getValue();
                 String rte = (String) dataSnapshot.child("rate").getValue();
-                String url = (String) dataSnapshot.child("URL").getValue();
+                String url = (String) dataSnapshot.child("url").getValue();
+
+                try {
+                    URL myURL = new URL(url);
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+
 
                 name.setText(recipe_name);
                 desc.setText(description);
                 ingr.setText(ingredients);
                 instr.setText(instructions);
                 rate.setText(rte);
-                URL.setText(url);
+                urL.setText(url);
 
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+
+        editbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(showRecipeDetail.this,editRecipe.class);
+                intent.putExtra("RecipeID",recipe_key);
+                startActivity(intent);
             }
         });
 

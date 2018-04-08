@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             String id = recipedb.push().getKey();
 
             //creating an Artist Object
-            createRecipe recipe = new createRecipe(id, name_tv,desc, ingr, instr,rate);
+            createRecipe recipe = new createRecipe(id, name_tv,desc, ingr, instr,rate,URL);
 
             //Saving the Artist
             recipedb.child(id).setValue(recipe);

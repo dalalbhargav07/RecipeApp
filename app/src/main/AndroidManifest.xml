@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".showRecipe_recyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,12 +20,19 @@
         </activity>
 
 
+
         <activity android:name=".showRecipeDetail"
             android:label="showRecipeDetail">
         </activity>
 
+        <!--
         <activity android:name=".showRecipe_recyclerview"
             android:label="showRecipe_recyclerview">
+        </activity>
+        -->
+
+        <activity android:name=".editRecipe"
+            android:label="editRecipe">
         </activity>
 
     </application>
