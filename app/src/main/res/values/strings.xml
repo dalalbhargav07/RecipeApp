@@ -7,4 +7,7 @@
     <string name="instructions">Instructions</string>
     <string name="rate">Rating</string>
 
+    <string name="b_rec">Browse Recipe</string>
+    <string name="a_rec">Add new Recipe</string>
+
 </resources>

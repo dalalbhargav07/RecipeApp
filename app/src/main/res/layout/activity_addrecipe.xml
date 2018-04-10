@@ -126,14 +126,14 @@
             android:id="@+id/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rate(1-5)"
+            android:text="Rate(0-5)"
             android:inputType="numberDecimal"
             android:layout_below="@+id/et_instruction"
             android:gravity="center_horizontal"
             />
 
-        <!--
-        <RatingBar
+
+        <!--<RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -141,18 +141,17 @@
             android:layout_below="@+id/rate"
             android:isIndicator="true"
             android:numStars="5"
-            android:rating="3.5" />
-         -->
-
+            android:rating="4" />
+            -->
         <EditText
             android:id="@+id/et_rating"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_below="@+id/rate"
             android:layout_centerHorizontal="true"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:textColor="#4B86B4"
-            android:textSize="12sp"
+            android:textSize="18sp"
             />
 
 

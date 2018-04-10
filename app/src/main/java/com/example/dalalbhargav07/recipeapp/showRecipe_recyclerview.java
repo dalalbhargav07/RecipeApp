@@ -1,10 +1,13 @@
 package com.example.dalalbhargav07.recipeapp;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.dalalbhargav07.recipeapp.model.createRecipe;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +31,7 @@ public class showRecipe_recyclerview extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+
     List<createRecipe> list = new ArrayList<>();
 
     RecyclerView recyclerView;
@@ -37,7 +41,7 @@ public class showRecipe_recyclerview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recyclerview);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 

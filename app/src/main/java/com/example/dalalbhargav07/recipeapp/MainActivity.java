@@ -16,74 +16,31 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText name;
-    EditText description;
-    EditText ingredients;
-    EditText instructions;
-    EditText url;
-
-    EditText rating;
-
-    Button save;
-
-    DatabaseReference recipedb;
+    Button create,browse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addrecipe);
+        setContentView(R.layout.activity_main);
 
-        recipedb = FirebaseDatabase.getInstance().getReference("recipe");
+        create = findViewById(R.id.create);
+        browse =  findViewById(R.id.browse);
 
-        name = findViewById(R.id.et_name);
-        description = findViewById(R.id.et_desc);
-        ingredients = findViewById(R.id.et_ingredients);
-        instructions = findViewById(R.id.et_instruction);
-        save = findViewById(R.id.savebtn);
-
-        rating = findViewById(R.id.et_rating);
-        url = findViewById(R.id.et_url);
-
-        save.setOnClickListener(new View.OnClickListener() {
+        create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addRecipe();
+                Intent intent = new Intent(MainActivity.this,add_recipe.class);
+                startActivity(intent);
             }
         });
-    } // end of oncreate
 
-    private void addRecipe() {
-
-        String name_tv = name.getText().toString();
-        String desc = description.getText().toString();
-        String ingr = ingredients.getText().toString();
-        String instr = instructions.getText().toString();
-        String rate = rating.getText().toString();
-        String URL = url.getText().toString();
-
-        if (!TextUtils.isEmpty(name_tv)) {
-
-            //getting a unique id using push().getKey() method
-            //it will create a unique id and we will use it as the Primary Key for our Artist
-            String id = recipedb.push().getKey();
-
-            //creating an Artist Object
-            createRecipe recipe = new createRecipe(id, name_tv,desc, ingr, instr,rate,URL);
-
-            //Saving the Artist
-            recipedb.child(id).setValue(recipe);
-
-            //setting edittext to blank again
-            name.setText("");
-
-            //displaying a success toast
-            Toast.makeText(this, "Recipe added", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, showRecipe_recyclerview.class);
-            startActivity(intent);
-        } else {
-            //if the value is not given displaying a toast
-            Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
-        }
+        browse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,showRecipe_recyclerview.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

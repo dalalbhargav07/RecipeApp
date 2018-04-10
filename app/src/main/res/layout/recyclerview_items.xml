@@ -17,14 +17,14 @@
         android:background="#ECEFF1"
         android:padding="10dp">
 
-        <TextView
+        <!--<TextView
             android:id="@+id/recipeName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/recipe_Name"
             android:textColor="#000"
-            android:textSize="20dp" />
+            android:textSize="20dp" /> -->
 
         <TextView
             android:id="@+id/tv_recipeName"
@@ -35,8 +35,7 @@
             android:textColor="#000"
             android:textSize="20dp"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/recipeName"
-            android:layout_toEndOf="@+id/recipeName"
+
             android:layout_marginLeft="19dp"
             android:layout_marginStart="19dp" />
 

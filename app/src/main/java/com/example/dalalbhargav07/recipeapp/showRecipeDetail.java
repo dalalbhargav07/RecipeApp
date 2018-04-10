@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -31,6 +32,7 @@ public class showRecipeDetail extends AppCompatActivity {
     private Button editbtn;
 
     private  String recipe_key = null;
+
 
     private DatabaseReference recipedb;
 
@@ -61,12 +63,6 @@ public class showRecipeDetail extends AppCompatActivity {
                 String instructions = (String) dataSnapshot.child("instructions").getValue();
                 String rte = (String) dataSnapshot.child("rate").getValue();
                 String url = (String) dataSnapshot.child("url").getValue();
-
-                try {
-                    URL myURL = new URL(url);
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                }
 
 
                 name.setText(recipe_name);
